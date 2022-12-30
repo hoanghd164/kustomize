@@ -1,6 +1,5 @@
 commonLabels:
-  app: my-wordpress
+  app: vnpt-prometheus
   
 bases:
-- ./wordpress
-- ./mysql
+- ./prometheus

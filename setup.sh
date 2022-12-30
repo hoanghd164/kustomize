@@ -1,7 +1,8 @@
 #!/bin/bash
 clear
 git_clean=False
-git_pust(){
+
+git_push(){
 if [[ $git_clean == True ]];then rm -rf .git; git init;fi
 
 git config --global user.name "hoanghd"
@@ -15,4 +16,4 @@ git push -u --force kustomize-gitlab master
 if [[ $(git remote | grep -Eoc 'kustomize-github') == 0 ]];then git remote add kustomize-github https://github.com/hoanghd164/kustomize.git;fi
 git push -u --force kustomize-github master
 }
-git_pust
+git_push
