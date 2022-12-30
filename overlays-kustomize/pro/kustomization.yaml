@@ -1,0 +1,5 @@
+bases:
+- ../../wordpress-kustomize/
+
+patchesStrategicMerge:
+- localserv.yaml
