@@ -1,6 +1,6 @@
 bases:
-- ../../prometheus-kustomize/
-# - ../../wordpress-kustomize/
+# - ../../prometheus-kustomize/
+- ../../wordpress-kustomize/
 
 patchesStrategicMerge:
 - localserv.yaml
