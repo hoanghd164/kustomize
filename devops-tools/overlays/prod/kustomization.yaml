@@ -4,6 +4,6 @@ namespace: devops-tools
 resources:
 - ../../base
 patches:
-- path: persistentvolume-patch.yaml
-- path: persistentvolumeclaim-patch.yaml
+# - path: persistentvolume-patch.yaml
+# - path: persistentvolumeclaim-patch.yaml
 - path: ingress-patch.yaml
