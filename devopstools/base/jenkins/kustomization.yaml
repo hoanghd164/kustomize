@@ -1,0 +1,7 @@
+resources:
+- ./namespace.yaml
+- ./serviceAccount.yaml
+- ./volume.yaml
+- ./deployment.yaml
+- ./service.yaml
+- ./ingress.yaml
