@@ -1,9 +1,7 @@
 resources:
 - ./namespace.yaml
 - ./serviceAccount.yaml
-- ./storageclass.yaml
-- ./persistentvolume.yaml
-- ./persistentvolumeclaim.yaml
+- ./volume.yaml
 - ./deployment.yaml
 - ./service.yaml
 - ./ingress.yaml
