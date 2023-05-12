@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+  namespace: devops-tools
+spec:
+  template:
+    spec:
+      containers:
+        - name: jenkins
+          volumeDevices:
+            - devicePath: /var/jenkins_home
+              name: jenkins-data
+          volumeMounts:
