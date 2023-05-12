@@ -9,6 +9,8 @@ resources:
   
 patches:
 - path: namespace.yaml
+- path: namespace.yaml
+- path: persistentvolume.yaml
 - path: persistentvolumeclaim.yaml
 - path: deployment-patch.yaml
 - path: ingress-patch.yaml

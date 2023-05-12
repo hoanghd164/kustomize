@@ -11,4 +11,3 @@ spec:
           volumeDevices:
             - devicePath: /var/jenkins_home
               name: jenkins-data
-          volumeMounts:
