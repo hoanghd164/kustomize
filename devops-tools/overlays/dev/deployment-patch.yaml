@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
         - name: jenkins
-          volumeDevices:
-            - devicePath: /var/jenkins_home
-              name: jenkins-data
+          volumeMounts:
+            - name: jenkins-data
+              mountPath: /var/jenkins_home  
           volumeMounts:

@@ -5,9 +5,10 @@ resources:
   - ../../base
   - storageclass.yaml
   - persistentvolume.yaml
+  - namespace.yaml
   
 patches:
-- path: namespace-patch.yaml
+- path: namespace.yaml
 - path: persistentvolumeclaim.yaml
 - path: deployment-patch.yaml
 - path: ingress-patch.yaml
