@@ -6,6 +6,10 @@ resources:
   - storageclass.yaml
   - persistentvolume.yaml
   - namespace.yaml
+  - clusterrole.yaml
+  - serviceaccount.yaml
+  - clusterroledinding.yaml
+
   
 patches:
 - path: namespace.yaml
