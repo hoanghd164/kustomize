@@ -4,5 +4,6 @@ namespace: devops-tools
 resources:
 - ../../base
 patches:
-- path: longhorn-volume.yaml
+- path: longhorn-volume-patch.yaml
+- path: deployment-patch.yaml
 - path: ingress-patch.yaml
