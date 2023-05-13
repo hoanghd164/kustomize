@@ -3,7 +3,3 @@ kind: Kustomization
 resources:
 - ./wordpress
 - ./mysql
-labels:
-- includeSelectors: true
-  pairs:
-    app: my-wordpress

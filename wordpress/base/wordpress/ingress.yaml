@@ -5,24 +5,16 @@ metadata:
   namespace: wordpress
   labels:
     app: website-wp
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    nginx.ingress.kubernetes.io/add-base-url: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: "0"
 spec:
-#   tls:
-#   - hosts:
-#     - wordpress.hoanghd.fun
-#     secretName: ssl-wordpress.hoanghd.fun
   ingressClassName: nginx
   rules:
-    - host: wordpress.hoanghd.fun
-      http:
-        paths:
-          - backend:
-              service:
+  - host: wordpress.hoanghd.com
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
                 name: website-wp
                 port:
                   number: 80
-            path: /
-            pathType: Prefix
