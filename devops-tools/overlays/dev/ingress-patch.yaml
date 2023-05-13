@@ -4,5 +4,15 @@ metadata:
   name: jenkins-ingress
   namespace: devops-tools
 spec:
+  ingressClassName: nginx
   rules:
     - host: jenkins-dev.hoanghd.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: jenkins-service
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix

@@ -6,6 +6,7 @@ metadata:
 spec:
   template:
     spec:
+      serviceAccountName: jenkins-admin-prod
       containers:
         - name: jenkins
           volumeDevices:

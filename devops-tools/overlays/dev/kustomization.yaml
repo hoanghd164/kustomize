@@ -3,17 +3,14 @@ kind: Kustomization
 namespace: devops-tools-dev
 resources:
   - ../../base
+  - namespace.yaml
   - storageclass.yaml
   - persistentvolume.yaml
-  - namespace.yaml
   - clusterrole.yaml
   - serviceaccount.yaml
   - clusterroledinding.yaml
 
-  
 patches:
-- path: namespace.yaml
-- path: namespace.yaml
 - path: persistentvolume.yaml
 - path: persistentvolumeclaim.yaml
 - path: deployment-patch.yaml

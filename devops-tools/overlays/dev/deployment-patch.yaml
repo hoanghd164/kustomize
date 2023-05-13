@@ -6,6 +6,7 @@ metadata:
 spec:
   template:
     spec:
+      serviceAccountName: jenkins-admin-dev
       containers:
         - name: jenkins
           volumeMounts:

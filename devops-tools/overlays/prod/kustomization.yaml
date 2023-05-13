@@ -4,6 +4,10 @@ namespace: devops-tools-prod
 resources:
   - ../../base
   - namespace.yaml
+  - clusterrole.yaml
+  - serviceaccount.yaml
+  - clusterroledinding.yaml
+
 patches:
 - path: longhorn-patch.yaml
 - path: deployment-patch.yaml
