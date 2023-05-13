@@ -1,17 +1,14 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: devops-tools-dev
+namespace: devops-tools-prod
 resources:
-  - ../../base
+  - ../../../jenkins/base
   - namespace.yaml
-  - storageclass.yaml
-  - persistentvolume.yaml
   - clusterrole.yaml
   - serviceaccount.yaml
   - clusterroledinding.yaml
 
 patches:
-- path: persistentvolume.yaml
-- path: persistentvolumeclaim.yaml
+- path: longhorn-patch.yaml
 - path: deployment-patch.yaml
 - path: ingress-patch.yaml
