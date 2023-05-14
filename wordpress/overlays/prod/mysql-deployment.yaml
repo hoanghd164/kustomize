@@ -47,14 +47,14 @@ spec:
         volumeDevices:
           - devicePath: /var/lib/mysql
             name: mysql
-        volumeMounts:
-        - name: mariadb-data
-          mountPath: /data/mariadb-data
+        # volumeMounts:
+        # - name: mariadb-data
+        #   mountPath: /data/mariadb-data
 
       volumes:
       - name: mysql
         persistentVolumeClaim:
           claimName: website-mysql-pvc
-      - name: mariadb-data
-        configMap:
-          name: mariadb-data
+      # - name: mariadb-data
+      #   configMap:
+      #     name: mariadb-data
