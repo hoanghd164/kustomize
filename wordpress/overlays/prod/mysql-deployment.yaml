@@ -6,55 +6,10 @@ metadata:
   labels:
     app: website-mysql
 spec:
-  selector:
-    matchLabels:
-      app: website-mysql
-  strategy:
-    type: Recreate
   template:
-    metadata:
-      labels:
-        app: website-mysql
     spec:
       containers:
-      - image: mysql:5.6
-        name: mysql
-        env:
-        - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql
-              key: password
-        - name: MYSQL_DATABASE
-          valueFrom:
-            secretKeyRef:
-              name: mysql
-              key: db_name
-        - name: MYSQL_USER
-          valueFrom:
-            secretKeyRef:
-              name: mysql
-              key: db_user
-        - name: MYSQL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql
-              key: db_pass
-        ports:
-        - containerPort: 3306
-          name: mysql
-
-        volumeDevices:
+        - name: mysql
+          volumeDevices:
           - devicePath: /var/lib/mysql
             name: mysql
-        # volumeMounts:
-        # - name: mariadb-data
-        #   mountPath: /data/mariadb-data
-
-      volumes:
-      - name: mysql
-        persistentVolumeClaim:
-          claimName: website-mysql-pvc
-      # - name: mariadb-data
-      #   configMap:
-      #     name: mariadb-data
