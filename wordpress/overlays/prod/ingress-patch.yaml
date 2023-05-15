@@ -7,23 +7,20 @@ metadata:
     app: website-wp
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    # nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    # cert-manager.io/issuer: "letsencrypt-prod"
-    # cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  ingressClassName: nginx
   tls:
-    - secretName: website-tls
-      hosts:
-        - wordpress.hoanghd.com
-        secretName: website-tls
+  - hosts:
+    - wordpress.hoanghd.com
+    secretName: website-tls
   rules:
-    - host: wordpress.hoanghd.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: website-wp
-                port:
-                  number: 80
+  - host: wordpress.hoanghd.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: website-wp
+            port:
+              number: 80
