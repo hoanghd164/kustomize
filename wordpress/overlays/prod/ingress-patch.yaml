@@ -31,7 +31,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: website
-  namespace: wordpress
+  namespace: wiki-hoanghd
   labels:
     app: website-wp
   annotations:
