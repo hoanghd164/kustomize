@@ -24,4 +24,3 @@ spec:
             name: website-wp
             port:
               number: 80
-
