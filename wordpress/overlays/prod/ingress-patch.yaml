@@ -5,8 +5,8 @@ metadata:
   namespace: wordpress
   labels:
     app: website-wp
-  # annotations:
-  #   cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
   tls:
@@ -25,23 +25,7 @@ spec:
             port:
               number: 80
 
-
-
-
 # openssl req -nodes -newkey rsa:2048 -keyout /home/wiki/tls.key -out /home/wiki/ca.csr -subj "/CN=wordpress.hoanghd.com"
 # openssl x509 -req -sha256 -days 365 -in /home/wiki/ca.csr -signkey /home/wiki/tls.key -out /home/wiki/tls.crt
-
 # kubectl create secret tls website-tls --cert=/home/wiki/tls.crt --key=/home/wiki/tls.key -n wiki-hoanghd
-
-
-
-# 
-# openssl req -x509 -newkey rsa:4096 -keyout /home/wiki/key.pem -out /home/wiki/cert.pem -days 365 -nodes -subj '/CN=wordpress.hoanghd.com'
-
-# kubectl create secret generic website-tls --from-file=/home/wiki/tls.key --from-file=/home/wiki/ca.csr --namespace=wiki-hoanghd
-
-# $  kubectl get secret -n wiki-hoanghd
-# NAME                  TYPE                                  DATA   AGE
-# default-token-cj7jv   kubernetes.io/service-account-token   3      14h
-# mysql                 Opaque                                6      14h
-# website-tls           Opaque                                2      12s
+# kubectl get secret -n wiki-hoanghd
