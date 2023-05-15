@@ -13,10 +13,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - wordpress.hoanghd.com
+    - wordpress1.hoanghd.com
     secretName: website-tls-ssl
   rules:
-  - host: wordpress.hoanghd.com
+  - host: wordpress1.hoanghd.com
     http:
       paths:
       - path: /
