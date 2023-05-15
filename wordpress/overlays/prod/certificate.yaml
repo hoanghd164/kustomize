@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: website-tls
-  namespace: wordpress
+  namespace: wiki-hoanghd
 spec:
   secretName: website-tls
   duration: 2160h # 90 days
