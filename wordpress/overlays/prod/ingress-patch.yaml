@@ -5,6 +5,11 @@ metadata:
   namespace: wordpress
   labels:
     app: website-wp
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/ssl-ciphers: "TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256"
+    nginx.ingress.kubernetes.io/ssl-certificate: "ssl-cert"
 spec:
   ingressClassName: nginx
   rules:
