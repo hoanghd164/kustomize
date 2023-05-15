@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: website
-  namespace: wordpress
+  namespace: wiki-hoanghd
   labels:
     app: website-wp
   annotations:
@@ -11,15 +11,15 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-ciphers: "TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256"
     nginx.ingress.kubernetes.io/ssl-certificate: "ssl-cert"
 spec:
-  ingressClassName: nginx
   rules:
   - host: wordpress.hoanghd.com
     http:
       paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-                name: website-wp
-                port:
-                  number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: website-wp
+            port:
+              name: http
+
