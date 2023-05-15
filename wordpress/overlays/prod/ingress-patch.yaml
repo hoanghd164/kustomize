@@ -9,10 +9,10 @@ metadata:
   #   cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - wordpress.hoanghd.com
-    secretName: website-tls
+  # tls:
+  # - hosts:
+  #   - wordpress.hoanghd.com
+  #   secretName: website-tls
   rules:
   - host: wordpress.hoanghd.com
     http:
