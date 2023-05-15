@@ -1,25 +1,3 @@
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: website
-#   namespace: wordpress
-#   labels:
-#     app: website-wp
-# spec:
-#   ingressClassName: nginx
-#   rules:
-#   - host: wordpress.hoanghd.com
-#     http:
-#       paths:
-#         - path: /
-#           pathType: Prefix
-#           backend:
-#             service:
-#                 name: website-wp
-#                 port:
-#                   number: 80
-
-
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -27,14 +5,14 @@ metadata:
   namespace: wordpress
   labels:
     app: website-wp
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  # annotations:
+  #   cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - wordpress.hoanghd.com
-    secretName: ssl-cert
+  # tls:
+  # - hosts:
+  #   - wordpress.hoanghd.com
+  #   secretName: ssl-cert
   rules:
   - host: wordpress.hoanghd.com
     http:
