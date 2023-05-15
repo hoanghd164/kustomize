@@ -5,7 +5,7 @@ namespace: wiki-hoanghd
 resources:
 - ../../base
 - namespace.yaml
-# - certificate.yaml
+- certificate.yaml
 - clusterissuer.yaml
 
 patches:
