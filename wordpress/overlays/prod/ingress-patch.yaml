@@ -9,10 +9,10 @@ metadata:
   #   cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
-  # tls:
-  # - hosts:
-  #   - wordpress.hoanghd.com
-  #   secretName: ssl-cert
+  tls:
+  - hosts:
+    - wordpress.hoanghd.com
+    secretName: website-tls
   rules:
   - host: wordpress.hoanghd.com
     http:
@@ -24,3 +24,13 @@ spec:
             name: website-wp
             port:
               number: 80
+
+
+
+# kubectl create secret generic website-tls --from-file=/home/wiki/cert.pem --from-file=/home/wiki/key.pem --namespace=wiki-hoanghd
+
+# $  kubectl get secret -n wiki-hoanghd
+# NAME                  TYPE                                  DATA   AGE
+# default-token-cj7jv   kubernetes.io/service-account-token   3      14h
+# mysql                 Opaque                                6      14h
+# website-tls           Opaque                                2      12s
