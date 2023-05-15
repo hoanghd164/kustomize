@@ -13,9 +13,9 @@ spec:
   tls:
     - secretName: website-tls
       hosts:
-        - wordpress1.hoanghd.com
+        - wordpress.hoanghd.com
   rules:
-    - host: wordpress1.hoanghd.com
+    - host: wordpress.hoanghd.com
       http:
         paths:
           - path: /
