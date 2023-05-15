@@ -9,10 +9,10 @@ metadata:
   #   cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
-  # tls:
-  # - hosts:
-  #   - wordpress.hoanghd.com
-  #   secretName: website-tls
+  tls:
+  - hosts:
+    - wordpress.hoanghd.com
+    secretName: website-tls
   rules:
   - host: wordpress.hoanghd.com
     http:
@@ -28,11 +28,17 @@ spec:
 
 
 
-# openssl req -nodes -newkey rsa:2048 -keyout /home/wiki/certs/tls.key -out certs/ca.csr -subj "/CN=monitor.hoanghd.com"
+# openssl req -nodes -newkey rsa:2048 -keyout /home/wiki/tls.key -out /home/wiki/ca.csr -subj "/CN=wordpress.hoanghd.com"
+# openssl x509 -req -sha256 -days 365 -in /home/wiki/ca.csr -signkey /home/wiki/tls.key -out /home/wiki/tls.crt
+
+# kubectl create secret tls website-tls --cert=/home/wiki/tls.crt --key=/home/wiki/tls.key -n wiki-hoanghd
+
+
+
 # 
 # openssl req -x509 -newkey rsa:4096 -keyout /home/wiki/key.pem -out /home/wiki/cert.pem -days 365 -nodes -subj '/CN=wordpress.hoanghd.com'
 
-# kubectl create secret generic website-tls --from-file=key.pem --from-file=cert.pem --namespace=wiki-hoanghd
+# kubectl create secret generic website-tls --from-file=/home/wiki/tls.key --from-file=/home/wiki/ca.csr --namespace=wiki-hoanghd
 
 # $  kubectl get secret -n wiki-hoanghd
 # NAME                  TYPE                                  DATA   AGE
