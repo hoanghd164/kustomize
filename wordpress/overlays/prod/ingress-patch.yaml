@@ -6,14 +6,12 @@ metadata:
   labels:
     app: website-wp
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    cert-manager.io/issuer: "letsencrypt-prod"
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
     - wordpress.hoanghd.com
-    secretName: website-tls-ssl
   rules:
   - host: wordpress.hoanghd.com
     http:

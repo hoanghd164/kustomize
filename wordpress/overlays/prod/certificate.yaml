@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: website-tls
+  namespace: wordpress
+spec:
+  secretName: website-tls
+  duration: 2160h # 90 days
+  renewBefore: 360h # 15 days
+  commonName: wordpress.hoanghd.com
+  dnsNames:
+    - wordpress.hoanghd.com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
