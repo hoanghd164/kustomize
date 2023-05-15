@@ -6,9 +6,9 @@ metadata:
   labels:
     app: website-wp
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     cert-manager.io/issuer: "letsencrypt-prod"
+    # cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
   tls:
@@ -26,8 +26,3 @@ spec:
             name: website-wp
             port:
               number: 80
-
-# openssl req -nodes -newkey rsa:2048 -keyout /home/wiki/tls.key -out /home/wiki/ca.csr -subj "/CN=wordpress.hoanghd.com"
-# openssl x509 -req -sha256 -days 365 -in /home/wiki/ca.csr -signkey /home/wiki/tls.key -out /home/wiki/tls.crt
-# kubectl create secret tls website-tls --cert=/home/wiki/tls.crt --key=/home/wiki/tls.key -n wiki-hoanghd
-# kubectl get secret -n wiki-hoanghd
