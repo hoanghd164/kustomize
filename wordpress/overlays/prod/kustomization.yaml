@@ -11,4 +11,5 @@ patches:
 - path: mysql-longhorn-patch.yaml
 - path: wordpress-deployment.yaml
 - path: wordpress-longhorn-patch.yaml
+- path: clusterissuer.yaml
 - path: ingress-patch.yaml
