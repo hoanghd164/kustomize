@@ -34,7 +34,7 @@ spec:
   tls:
   - hosts:
     - wordpress.hoanghd.com
-    secretName: website-tls
+    secretName: ssl-cert
   rules:
   - host: wordpress.hoanghd.com
     http:
