@@ -2,4 +2,4 @@ resources:
 - wordpress-volume.yaml
 - deployment.yaml
 - service.yaml
-- ingress.yaml
+# - ingress.yaml
