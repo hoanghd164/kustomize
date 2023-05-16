@@ -7,11 +7,11 @@ resources:
 - namespace.yaml
 # - certificate.yaml
 # - clusterissuer.yaml
-- traefik-ingress.yaml
+# - traefik-ingress.yaml
 
 patches:
 - path: mysql-deployment.yaml
 - path: mysql-longhorn-patch.yaml
 - path: wordpress-deployment.yaml
 - path: wordpress-longhorn-patch.yaml
-# - path: nginx-ingress-patch.yaml
+- path: nginx-ingress-patch.yaml
