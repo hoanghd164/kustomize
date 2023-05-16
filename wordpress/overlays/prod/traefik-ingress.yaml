@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: website-wp
+  namespace: wiki-hoanghd
+  labels:
+    app: website-wp
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`wordpress.hoanghd.com`)
+      kind: Rule
+      services:
+        - name: website-wp
+          port: 80

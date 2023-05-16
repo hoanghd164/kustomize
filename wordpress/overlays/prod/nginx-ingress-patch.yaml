@@ -5,8 +5,6 @@ metadata:
   namespace: wordpress
   labels:
     app: website-wp
-  # annotations:
-  #   cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
   tls:
