@@ -9,8 +9,8 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`wordpress.hoanghd.com`)
-      kind: Rule
-      services:
-        - name: website-wp
-          port: 80
+  - match: Host(`wordpress.hoanghd.com`) && PathPrefix(`/`)
+    kind: Rule
+    services:
+    - name: website-wp
+      port: 80
