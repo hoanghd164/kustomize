@@ -4,7 +4,7 @@ metadata:
   name: website-mysql-pvc
   namespace: wordpress
   labels:
-    app: website-website-mysql
+    app: matbao-website-mysql
 spec:
   accessModes:
     - ReadWriteOnce
