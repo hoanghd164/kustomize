@@ -10,5 +10,5 @@ spec:
       containers:
         - name: jenkins
           volumeDevices:
-            - devicePath: /var/jenkins_home
+            - devicePath: /var/jenkins_home_dev
               name: jenkins-data
