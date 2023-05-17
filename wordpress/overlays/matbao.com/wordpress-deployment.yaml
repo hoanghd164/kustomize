@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website-wp
+  namespace: wordpress
+  labels:
+    app: matbao-website-wp
+spec:
+  template:
+    spec:
+      containers:
+      - name: wordpress
+        volumeDevices:
+          - devicePath: /var/www/html
+            name: wordpress-files

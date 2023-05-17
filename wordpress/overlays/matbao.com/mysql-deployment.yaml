@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website-mysql
+  namespace: wordpress
+  labels:
+    app: matbao-website-mysql
+spec:
+  template:
+    spec:
+      containers:
+        - name: mysql
+          volumeDevices:
+          - devicePath: /var/lib/mysql
+            name: mysql

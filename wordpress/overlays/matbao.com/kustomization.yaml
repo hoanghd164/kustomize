@@ -1,0 +1,14 @@
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: matbao
+resources:
+- ../../base
+- namespace.yaml
+
+patches:
+- path: mysql-deployment.yaml
+- path: mysql-longhorn-patch.yaml
+- path: wordpress-deployment.yaml
+- path: wordpress-longhorn-patch.yaml
+- path: nginx-ingress-patch.yaml

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: website-wp-pvc
+  namespace: wordpress
+  labels:
+    app: matbao-website-wp
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Block
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 50Gi
