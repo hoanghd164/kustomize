@@ -6,13 +6,13 @@ metadata:
 spec:
   template:
     spec:
-      serviceAccountName: jenkins-admin-prod
+      serviceAccountName: jenkins-admin-master
       containers:
         - name: jenkins
           volumeDevices:
-            - devicePath: /var/jenkins_home_prod
-              name: jenkins-data-prod
+            - devicePath: /var/jenkins_home_master
+              name: jenkins-data-master
       volumes:
-        - name: jenkins-data-prod
+        - name: jenkins-data-master
           persistentVolumeClaim:
               claimName: jenkins-pv-claim
