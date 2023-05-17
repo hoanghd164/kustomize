@@ -10,5 +10,10 @@ spec:
       containers:
         - name: jenkins
           volumeMounts:
-            - name: jenkins-data
-              mountPath: /var/jenkins_home  
+            - name: jenkins-data-dev
+              mountPath: /var/jenkins_home_dev
+
+      volumes:
+        - name: jenkins-data-dev
+          persistentVolumeClaim:
+              claimName: jenkins-pv-claim

@@ -11,4 +11,8 @@ spec:
         - name: jenkins
           volumeDevices:
             - devicePath: /var/jenkins_home_prod
-              name: jenkins-data
+              name: jenkins-data-prod
+      volumes:
+        - name: jenkins-data-prod
+          persistentVolumeClaim:
+              claimName: jenkins-pv-claim
